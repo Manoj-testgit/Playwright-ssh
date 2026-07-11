@@ -1,0 +1,48 @@
+const {expect} = require('@playwright/test');
+
+
+class OrdersReviewPage
+{
+
+    constructor(page)
+    {
+        this.page = page;
+        this.country = page.locator("[placeholder*='Country']");
+        this.dropdown = page.locator(".ta-results");
+        this.submit = page.locator(".action__submit");
+        this.emailId = page.locator(".user__name [type='text']").first();
+
+    }
+
+
+    async searchCountryCodeandSelect(countryCode,countryName)
+    {
+
+    
+    await this.country.pressSequentially(countryCode,{delay:100});
+        await this.dropdown.waitFor();
+        const optionsCount = await this.dropdown.locator("button").count();
+        
+        for (let i=0;i<optionsCount;i++)
+            {
+                const text = await this.dropdown.locator("button").nth(i).textContent();
+                if (text.trim() === countryName)
+                {
+                    await this.dropdown.locator("button").nth(i).click();
+                    break;
+                }
+    
+            }
+        }
+    
+    async emailandSubmit(username)
+    {
+    
+        await expect (this.emailId).toHaveText(username);
+        await this.submit.click();
+    }
+
+
+
+}
+module.exports = {OrdersReviewPage};
