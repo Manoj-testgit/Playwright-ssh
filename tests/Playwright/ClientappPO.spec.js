@@ -64,7 +64,7 @@ test.only (`Cient App logic for ${data.productName}`, async ({page}) =>{
 });
 }
 
-customtest.only (`@Web Cient App logic`, async ({page,testDataForOrder}) =>{
+customtest.only (`Cient App logic`, async ({page,testDataForOrder}) =>{
     //@Web - tag can be used in cmd prmt to call only the tagged test and not other tests 
 
     const loginPage = new LoginPage(page);
