@@ -82,4 +82,5 @@ customtest.only (`Cient App logic`, async ({page,testDataForOrder}) =>{
     const cartpage = new CartPage (page, testDataForOrder.productName);
     await cartpage.CheckoutItem(testDataForOrder.productName);
     await cartpage.CheckOutprocess();
+    
 });
