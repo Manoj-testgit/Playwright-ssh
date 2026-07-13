@@ -19,7 +19,7 @@ as an array, just by adding square bracets for the json data file */
 
 for (const data of dataSet)
 {
-test.only (`Cient App logic for ${data.productName}`, async ({page}) =>{
+test (`Cient App logic for ${data.productName}`, async ({page}) =>{
     /*changing the test description above since, it throws error 
     to print same test name for multiple data from json */
    
@@ -64,7 +64,7 @@ test.only (`Cient App logic for ${data.productName}`, async ({page}) =>{
 });
 }
 
-customtest.only (`Cient App logic`, async ({page,testDataForOrder}) =>{
+customtest (`Cient App logic`, async ({page,testDataForOrder}) =>{
     //@Web - tag can be used in cmd prmt to call only the tagged test and not other tests 
 
     const loginPage = new LoginPage(page);
@@ -82,5 +82,5 @@ customtest.only (`Cient App logic`, async ({page,testDataForOrder}) =>{
     const cartpage = new CartPage (page, testDataForOrder.productName);
     await cartpage.CheckoutItem(testDataForOrder.productName);
     await cartpage.CheckOutprocess();
-    
+
 });
