@@ -25,7 +25,7 @@ export default defineConfig({
 
      use: {
       browserName: 'chromium',
-      headless:true,
+      headless:false,
       screenshot : 'on',//'only-on-failure'
       trace : 'on',  /*use this to get screeshot only when it fails ('retain-on-failure')*/
      }

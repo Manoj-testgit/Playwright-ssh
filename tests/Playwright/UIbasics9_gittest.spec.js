@@ -2,7 +2,7 @@ const {test,expect} = require("@playwright/test")
 
 
 
-test.only ("Github testing" ,  async({page}) =>
+test ("Github testing" ,  async({page}) =>
 {
     await page.goto("https://www.crunchyroll.com/");
     await page.waitForLoadState();

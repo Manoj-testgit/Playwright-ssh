@@ -4,7 +4,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('GreenKart storefront', () => {
-  test('Homepage and product discovery', async ({ page }) => {
+  test.only('Homepage and product discovery', async ({ page }) => {
     // Open the GreenKart home page.
     await page.goto('https://rahulshettyacademy.com/seleniumPractise/#/');
 
